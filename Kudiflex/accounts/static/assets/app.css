@@ -1,0 +1,374 @@
+/* Global Styles */
+
+body {
+  background-color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  color: #01AE94;
+  margin: 0;
+  padding: 0;
+}
+
+h2, h1, .wallet-label {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.header {
+  background-color: #FFFFFF;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-img {
+  width: 50px;
+}
+
+.btn-toggle i, 
+a i.bi-bell {
+  color: #01AE94; /* White color */
+}
+
+.welcome-message {
+  color: #01AE94;
+  font-size: 1.3rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.nav-links {
+  list-style: none;
+  padding-left: 0;
+}
+
+.nav-links li {
+  padding: 0.5rem 0;
+}
+
+.nav-links a {
+  color: #271E49;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #01AE94;
+}
+
+.wallet-section {
+  padding: 1rem;
+}
+
+.wallet-card {
+  background-color: #01AE94;
+  padding: 1.5rem;
+  border-radius: 10px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wallet-balance {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: left;
+}
+
+.currency-select {
+  background-color: #01AE94;
+  color: #FFFFFF;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.currency-select:hover {
+  background-color: #01987c;
+}
+
+
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.action-buttons a {
+  text-decoration-line: none;
+}
+
+.action-btn {
+  background-color: #f1f1f1;
+  border: none;
+  color: #01AE94;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  width: 100px; /* Consistent width */
+  height: 100px; /* Consistent height */
+  font-size: 1rem;
+  color: #01AE94;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.action-btn i {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.action-btn:hover {
+  transform: scale(1.05);
+}
+
+.exchange-rates {
+  margin: 2rem 0;
+}
+
+.exchange-card {
+  background-color: #01987c;
+  color: #FFFFFF;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.exchange-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.manage-rate-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-manage-rate {
+  background-color: #01AE94;
+  color: #FFFFFF;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-manage-rate:hover {
+  background-color: #564C7A;
+  transform: scale(1.02);
+}
+
+/* Mobile Adjustments */
+
+
+
+
+
+/* Responsive Styles for Mobile Devices */
+@media (max-width: 768px) {
+
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .wallet-card {
+    max-width: 90%;
+    padding: 1.2rem;
+  }
+
+  .wallet-balance {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .currency-select {
+    width: 100px;
+  }
+
+  .action-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .action-btn {
+    width: 80px;
+    height: 80px;
+    font-size: 0.9rem;
+  }
+
+  .manage-rate-button {
+    justify-content: center;
+  }
+
+  .btn-manage-rate {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+/* Desktop-Specific Styles */
+@media (min-width: 992px) {
+  .header {
+    padding: 1.5rem 5rem;
+    justify-content: space-between;
+  }
+
+  .wallet-section {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .wallet-card {
+    width: 60%;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .wallet-balance {
+    font-size: 3rem;
+  }
+
+  .currency-select {
+    width: 100px;
+    transition: width 0.4s ease;
+  }
+
+  .currency-select:hover {
+    width: 120px;
+  }
+
+  .action-buttons {
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .action-btn {
+    background-color: #f1f1f1;
+  border: none;
+  color: #01AE94;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  width: 100px; /* Consistent width */
+  height: 100px; /* Consistent height */
+  font-size: 1rem;
+  color: #01987c;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  }
+
+  .action-btn i {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+  }
+  
+  .action-btn:hover {
+    transform: scale(1.05);
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .exchange-card {
+    padding: 1.5rem;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .exchange-card:hover {
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .manage-rate-button {
+    justify-content: flex-end;
+  }
+
+  .btn-manage-rate {
+    padding: 1rem 3rem;
+  }
+}
+
+/* Responsive Styles for 320px and 480px */
+@media (max-width: 480px) {
+
+  /* Action buttons alignment */
+  .action-buttons {
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap; /* Allows wrapping if buttons don't fit in one row */
+  }
+
+  .action-btn {
+    width: 70px;
+    height: 70px;
+    font-size: 0.8rem;
+    padding: 8px 16px;
+  }
+
+  .action-btn i {
+    font-size: 1.2rem;
+  }
+
+  .wallet-card {
+    max-width: 85%;
+  }
+
+  .currency-select {
+    width: 80px;
+  }
+
+  .wallet-balance {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 320px) {
+
+  /* Action buttons alignment for smaller screens */
+  .action-buttons {
+    flex-direction: row;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap; /* Ensures the buttons can still wrap on very small screens */
+  }
+
+  .action-btn {
+    width: 60px;
+    height: 60px;
+    font-size: 0.7rem;
+    padding: 6px 12px;
+  }
+
+  .action-btn i {
+    font-size: 1rem;
+  }
+
+  .wallet-card {
+    max-width: 80%;
+  }
+
+  .currency-select {
+    width: 70px;
+  }
+
+  .wallet-balance {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+}
+

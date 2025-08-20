@@ -1,0 +1,83 @@
+/* Global Styles */
+body {
+    background-image: url(/assets/img/signup.png);
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+header .logo img {
+    max-width: 150px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+/* Card Form Styling */
+.card {
+    background-color: white;
+    border-radius: 15px;
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    
+}
+
+.main-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    animation: fadeIn 1s forwards;
+}
+
+.subheading {
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-top: 10px;
+    color: #666;
+}
+
+/* Button Styles */
+.custom-btn {
+    background-color: #01AE94;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.custom-btn:hover {
+    background-color: #01987c;
+    transform: scale(1.05);
+}
+
+.text-decoration-none {
+    text-decoration: none;
+    color: #01AE94;
+}
+
+/* Eye Icon Styles */
+.toggle-password {
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* Animation Styles */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .custom-btn {
+        font-size: 1rem;
+    }
+    .card {
+        padding: 15px;
+        margin-bottom: 20%;
+    }
+}

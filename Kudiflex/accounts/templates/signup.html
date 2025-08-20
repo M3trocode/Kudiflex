@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up to Kudiflex</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/main.css' %}">
+</head>
+<body>
+
+<!-- Header Section -->
+<header class="text-center my-4 fade-in">
+    <a href="/" class="logo">
+        <img src="{% static 'assets/img/logo2.png' %}" alt="Kudiflex Logo" class="img-fluid">
+    </a>
+</header>
+
+<!-- Signup Form Section -->
+<section class="d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow-lg">
+        {% comment %} {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">{{ message }}</div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %} {% endcomment %}
+        <h2 class="text-center main-heading mb-3">Sign up to Kudiflex</h2>
+        <p class="text-center subheading mb-4">Create a Kudiflex profile with a few details. Your password must have at least 8 characters including letters and a number.</p>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control rounded" id="username" placeholder="Enter your username" name="username" required >
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control rounded" id="email" placeholder="Enter your email" name="email" required >
+            </div>
+            <div class="mb-3 position-relative">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control rounded" id="password" placeholder="Enter your password" name="password" required >
+                <i class="toggle-password fas fa-eye position-absolute" onclick="togglePassword('password')" style="right: 10px; top: 50%; cursor: pointer;"></i>
+            </div>
+            <div class="mb-3 position-relative">
+                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control rounded" id="confirmPassword" placeholder="Confirm your password" name="confirmpasssword" required >
+                <i class="toggle-password fas fa-eye position-absolute" onclick="togglePassword('confirmPassword')" style="right: 10px; top: 50%; cursor: pointer;"></i>
+            </div>
+            
+            <div class="mb-2 text-end">
+                <a href="#" class="text-decoration-none">Already have an account</a>
+            </div>
+
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary btn-lg custom-btn">Sign up</button>
+            </div>
+       
+        </form>
+    </div>
+</section>
+
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script src="{% static 'script.js' %}"></script>
+
+</body>
+</html>
