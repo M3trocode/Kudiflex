@@ -1,0 +1,153 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #FFFFFF;
+    color: #292246;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .pin-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .pin-wrapper {
+    background-color: #01AE94;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .create-pin-heading {
+    font-family: 'Montserrat', sans-serif;
+    color: #FFFFFF;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  
+  .create-pin-subheading {
+    font-size: 1rem;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+  }
+  
+  /* PIN Display */
+  .pin-display {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .pin-dot {
+    width: 20px;
+    height: 20px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    opacity: 0.3;
+  }
+  
+  .pin-dot.active {
+    opacity: 1;
+  }
+  
+  /* Keypad Styles */
+  .keypad-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .keypad-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .keypad-btn {
+    background-color: #292246;
+    color: #FFFFFF;
+    border: none;
+    padding: 15px;
+    width: 75px;
+    height: 75px;
+    margin: 10px;
+    border-radius: 12px;
+    font-size: 1.5rem;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .keypad-btn:hover {
+    background-color: #111016;
+    transform: scale(1.05);
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .continue-btn,
+  .cancel-btn {
+    width: 48%;
+    padding: 10px 0;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  .continue-btn {
+    background-color: #292246;
+    border: none;
+  }
+  
+  .continue-btn:hover {
+    background-color: #111016;
+  }
+  
+  .cancel-btn {
+    background-color: #f44336;
+    border: none;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #c62828;
+  }
+  
+  /* Responsive adjustments for small screens */
+  @media (max-width: 576px) {
+    .pin-wrapper {
+      padding: 20px;
+    }
+  
+    .create-pin-heading {
+      font-size: 1.5rem;
+    }
+  
+    .create-pin-subheading {
+      font-size: 0.9rem;
+    }
+  
+    .pin-dot {
+      width: 15px;
+      height: 15px;
+    }
+  
+    .keypad-btn {
+      width: 60px;
+      height: 60px;
+      margin: 5px;
+    }
+  
+    .continue-btn,
+    .cancel-btn {
+      font-size: 0.9rem;
+    }
+  }
+  

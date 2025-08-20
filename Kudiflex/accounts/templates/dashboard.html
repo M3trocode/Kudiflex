@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fintech Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+
+  <!-- Header Section -->
+    <!-- Header Section -->
+    <header class="header  text-light d-flex justify-content-between align-items-center px-5 py-3">
+        <div class="logo">
+          <a href="home.html"><img src="assets/img/logo.png" alt="Logo" class="logo-img"></a>
+        </div>
+        <h2 class="welcome-message text-center">Welcome back, User</h2>
+        <div class="d-flex align-items-center">
+          <!-- Toggle Button with Links -->
+          <button class="btn btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggle" aria-expanded="false">
+            <i class="bi bi-list"></i>
+          </button>
+          <div class="collapse" id="navbarToggle">
+            <ul class="nav-links">
+              <li><a href="#">Wallet</a></li>
+              <li><a href="virtual_card.html">Virtual Card</a></li>
+              <li><a href="#">Treasure</a></li>
+              <li><a href="profile.html">Personal</a></li>
+            </ul>
+          </div>
+          <a href="notifications.html" class="ms-3">
+            <i class="bi bi-bell"></i>
+          </a>
+        </div>
+      </header>
+
+  <!-- Wallet Balance Section -->
+  <section class="wallet-section py-5 text-center">
+    <div class="wallet-card text-white mx-auto animate-fade-in">
+      <div class="d-flex justify-content-between align-items-center">
+        <small class="wallet-label">Wallet</small>
+        <select class="currency-select" id="currencyDropdown">
+          <option value="ngn">NGN</option>
+          <option value="usd">USD</option>
+        </select>
+      </div>
+      <h1 class="wallet-balance">₦{{ wallet_balance }}</h1>
+    </div>
+  </section>
+
+  <!-- Action Buttons -->
+  <!-- Action Buttons -->
+  <section class="action-buttons d-flex justify-content-center gap-4 py-3">
+    <a href="send.html">
+    <button class="action-btn send-btn animate-bounce">
+      <i class="bi bi-send"></i> Send
+    </button></a>
+    <a href="buy.html">
+    <button class="action-btn buy-btn animate-bounce">
+      <i class="bi bi-cart"></i> Buy
+    </button></a>
+    <a href="swap.html">
+    <button class="action-btn swap-btn animate-bounce">
+      <i class="bi bi-arrow-repeat"></i> Swap
+    </button></a>
+    <a href="receive.html">
+    <button class="action-btn receive-btn animate-bounce">
+      <i class="bi bi-arrow-down-circle"></i> Receive
+    </button></a>
+  </section>
+
+  <!-- Exchange Rate Section -->
+  <section class="exchange-rates grid-container py-5 px-5">
+    <div>
+        <h2 class="mb-4">Exchange Rates</h2>
+        <div class="exchange-rate-description">
+        </div>
+      </div>
+    </div>
+    <div class="exchange-card d-flex justify-content-between align-items-center animate-fade-in">
+        <i class="bi bi-currency-dollar"></i>
+      <span>Dollar</span>
+      <span>1 dollar = ₦1,560</span>
+    </div>
+    <div class="exchange-card d-flex justify-content-between align-items-center animate-fade-in">
+        <i class="bi bi-currency-pound"></i>
+      <span>Pounds</span>
+      <span>1 pound = ₦2,010</span>
+    </div>
+    <div class="exchange-card d-flex justify-content-between align-items-center animate-fade-in">
+        <i class="bi bi-currency-euro"></i>
+      <span>Euro</span>
+      
+      <span>1 euro = ₦1,800</span>
+    </div>
+    <div class="exchange-card d-flex justify-content-between align-items-center animate-fade-in">
+        <i class="bi bi-currency-bitcoin"></i>
+      <span>Bitcoin</span>
+      <span>1 BTC = ₦25,000,000</span>
+    </div>
+  </section>
+
+
+  <!-- Manage Exchange Rate Button -->
+  <div class="manage-rate-button text-end px-5 py-3">
+    <button class="btn btn-manage-rate">Manage Exchange Rate</button>
+  </div>
+
+   <!-- Transaction History Section -->
+  <!-- dashboard.html -->
+<section class="transaction-history px-5 py-4">
+  <h2 class="mb-4">Transaction History</h2>
+  {% for transaction in transactions %}
+  <div class="transaction-card d-flex justify-content-between align-items-center p-3 mb-3 bg-white shadow-sm">
+      <div>
+          <h5 class="transaction-title mb-1">{{ transaction.get_transaction_type_display }}</h5>
+          <small class="text-muted">{{ transaction.timestamp|date:"M d, Y" }}</small>
+      </div>
+      {% if transaction.transaction_type == 'withdrawal' or transaction.transaction_type == 'send' %}
+      <span class="transaction-amount text-danger">- ₦{{ transaction.amount }}</span>
+      {% else %}
+      <span class="transaction-amount text-success">+ ₦{{ transaction.amount }}</span>
+      {% endif %}
+  </div>
+  {% empty %}
+  <p>No transactions available</p>
+  {% endfor %}
+</section>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

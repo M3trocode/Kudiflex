@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create PIN with Keypad</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'assets/pin.css' %}">
+</head>
+<body>
+  <div class="pin-container">
+    <div class="pin-wrapper">
+      <h2 class="create-pin-heading">Create Your PIN</h2>
+      <p class="create-pin-subheading">Secure your account with a 4-digit PIN</p>
+      
+      <!-- PIN Display -->
+      <div id="pinDisplay" class="pin-display">
+        <span class="pin-dot"></span>
+        <span class="pin-dot"></span>
+        <span class="pin-dot"></span>
+        <span class="pin-dot"></span>
+      </div>
+
+      <!-- Custom Keypad -->
+      <div class="keypad-container">
+        <div class="keypad-row">
+          <button class="keypad-btn" data-value="1">1</button>
+          <button class="keypad-btn" data-value="2">2</button>
+          <button class="keypad-btn" data-value="3">3</button>
+        </div>
+        <div class="keypad-row">
+          <button class="keypad-btn" data-value="4">4</button>
+          <button class="keypad-btn" data-value="5">5</button>
+          <button class="keypad-btn" data-value="6">6</button>
+        </div>
+        <div class="keypad-row">
+          <button class="keypad-btn" data-value="7">7</button>
+          <button class="keypad-btn" data-value="8">8</button>
+          <button class="keypad-btn" data-value="9">9</button>
+        </div>
+        <div class="keypad-row">
+          <button class="keypad-btn" data-action="backspace">←</button>
+          <button class="keypad-btn" data-value="0">0</button>
+          <button class="keypad-btn" data-action="clear">C</button>
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="button-container">
+        <button type="button" class="btn btn-primary continue-btn">Continue</button>
+        <button type="button" class="btn btn-danger cancel-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="{% static 'assets/js/pin.js' %}"></script>
+</body>
+</html>

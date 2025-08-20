@@ -1,0 +1,43 @@
+/* Global Styles */
+body {
+    background-color: #FFFFFF;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Transfer Card */
+  .transfer-card {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    max-width: 500px;
+  }
+  
+  .transfer-section h2 {
+    font-weight: 700;
+    color: #271E49;
+  }
+  
+  /* Form Label */
+  .form-label {
+    color: #271E49;
+  }
+  
+  /* Form Controls */
+  .form-control {
+    border-color: #01987c;
+  }
+  
+  .form-control:focus {
+    border-color: #01987c;
+    box-shadow: 0 0 0 0.2rem rgba(1, 152, 124, 0.25);
+  }
+  
+  /* Button */
+  .btn-primary {
+    background-color: #01987c;
+    border-color: #01987c;
+  }
+  
+  .btn-primary:hover {
+    background-color: #017759;
+  }
+  
